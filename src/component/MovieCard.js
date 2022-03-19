@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import Rating from "./Rating";
 const MovieCard=({movie})=>{
     return(
     <>
@@ -8,9 +9,8 @@ const MovieCard=({movie})=>{
                 
                     <Card.Text>
                     <img src={movie.posterUrl} alt='good'style={{ height:'300px',width:'200px'}}/>
-
-
                     </Card.Text>
+                    <p><Rating rate={movie.rate}/></p>
                 </Card.Body>
         </Card>
     </>);

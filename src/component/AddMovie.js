@@ -15,7 +15,7 @@ function AddMovie({addfilm}) {
 
     let newMovie ={
       title:name,
-      url:image,
+      posterUrl:image,
       rate:rate,
       id:Math.random()
     }

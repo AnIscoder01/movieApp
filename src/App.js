@@ -3,8 +3,9 @@ import NavBar from './component/NavBar';
 import MoviesList from './component/MoviesList';
 import {movies} from './component/MoviesData';
 import { useState } from 'react';
-
-
+import {Routes,Route} from 'react-router-dom'
+import Trailer from './component/Trailer';
+import Home from './component/Home';
 function App() {
 
   const [films,setfilms]=useState(movies);
@@ -15,11 +16,15 @@ function App() {
     <div className="App">
 
      <NavBar setfilms={setfilms} films={films} name={name} setName={setName} ratingSearch={ratingSearch} setRatingSearch={setRatingSearch}/>
-     
-     <MoviesList ratingSearch={ratingSearch} films={films} name={name}/>
-     
+       <Routes>
+       <Route path='/' element={      <MoviesList ratingSearch={ratingSearch} films={films} name={name}/>     
+}/>
+        <Route path='/trailer/:movieId' element={<Trailer/>}></Route>
+       
+       </Routes>
+       
+  
     </div>
-
 );
 }
 
